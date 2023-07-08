@@ -33,6 +33,12 @@
 <script>
 export default {
   name: 'Skill',
+  methods: {
+    getLogoImage(name) {
+      const logoPath = `../static/logo`
+      return new URL(`${logoPath}/${name}`, import.meta.url).href
+    }
+  },
   data() {
     return {
       max_rate: 5,
@@ -41,50 +47,50 @@ export default {
           id: 1,
           group: 'バックエンド',
           skill: [
-            { id: 1, logo: import('../static/logo/php.png'), rate: '4' },
-            { id: 2, logo: import('../static/logo/java.png'), rate: '3' },
-            { id: 3, logo: import('../static/logo/mysql.png'), rate: '3' }
+            { id: 1, logo: this.getLogoImage('php.png'), rate: '4' },
+            { id: 2, logo: this.getLogoImage('java.png'), rate: '3' },
+            { id: 3, logo: this.getLogoImage('mysql.png'), rate: '3' }
           ]
         },
         {
           id: 2,
           group: 'フロントエンド',
           skill: [
-            { id: 1, logo: import('../static/logo/vue.png'), rate: '2' },
-            { id: 2, logo: import('../static/logo/typescript.png'), rate: '1' }
+            { id: 1, logo: this.getLogoImage('vue.png'), rate: '2' },
+            { id: 2, logo: this.getLogoImage('typescript.png'), rate: '1' }
           ]
         },
         {
           id: 3,
           group: 'インフラ',
           skill: [
-            { id: 1, logo: import('../static/logo/aws.png'), rate: '3' },
-            { id: 2, logo: import('../static/logo/gcp.png'), rate: '1' },
-            { id: 3, logo: import('../static/logo/firebase.png'), rate: '1' }
+            { id: 1, logo: this.getLogoImage('aws.png'), rate: '3' },
+            { id: 2, logo: this.getLogoImage('gcp.png'), rate: '1' },
+            { id: 3, logo: this.getLogoImage('firebase.png'), rate: '1' }
           ]
         },
         {
           id: 4,
           group: 'ツール',
           skill: [
-            { id: 1, logo: import('../static/logo/vscode.png'), rate: '3' },
-            { id: 2, logo: import('../static/logo/eclipse.png'), rate: '4' },
-            { id: 3, logo: import('../static/logo/idea.png'), rate: '1' },
-            { id: 4, logo: import('../static/logo/vim.png'), rate: '2' }
+            { id: 1, logo: this.getLogoImage('vscode.png'), rate: '3' },
+            { id: 2, logo: this.getLogoImage('eclipse.png'), rate: '4' },
+            { id: 3, logo: this.getLogoImage('idea.png'), rate: '1' },
+            { id: 4, logo: this.getLogoImage('vim.png'), rate: '2' }
           ]
         },
         {
           id: 5,
           group: '外部サービス',
-          skill: [{ id: 1, logo: import('../static/logo/github.png'), rate: '4' }]
+          skill: [{ id: 1, logo: this.getLogoImage('github.png'), rate: '4' }]
         },
         {
           id: 6,
           group: '趣味',
           skill: [
-            { id: 1, logo: import('../static/logo/golang.png'), rate: '1' },
-            { id: 2, logo: import('../static/logo/scala.png'), rate: '1' },
-            { id: 3, logo: import('../static/logo/haskell.png'), rate: '1' }
+            { id: 1, logo: this.getLogoImage('golang.png'), rate: '1' },
+            { id: 2, logo: this.getLogoImage('scala.png'), rate: '1' },
+            { id: 3, logo: this.getLogoImage('haskell.png'), rate: '1' }
           ]
         }
       ]
