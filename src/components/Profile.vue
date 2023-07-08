@@ -69,10 +69,8 @@
             <span class="title font-weight-light">挑戦していること</span>
           </v-card-title>
           <v-card-text>
-            <v-list-item density="comfortable">
-              <v-list-item-content v-for="challenge in challenges" :key="challenge.id">
-                <p>{{ challenge.name }}</p>
-              </v-list-item-content>
+            <v-list-item density="comfortable" v-for="challenge in challenges" :key="challenge.id">
+              <v-list-item-title>{{ challenge.name }}</v-list-item-title>
             </v-list-item>
           </v-card-text>
         </v-card>
