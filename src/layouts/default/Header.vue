@@ -1,17 +1,9 @@
 <template>
-  <v-bottom-navigation app grow :value="active" color="gray">
-    <v-container fluid>
-      <v-row justify="center">
-        <v-toolbar-items>
-          <v-col>
-            <v-btn v-for="item in items" :key="item.id" :to="item.path">
-              <v-icon medium>{{ item.icon }}</v-icon>
-              <span>{{ item.name }}</span>
-            </v-btn>
-          </v-col>
-        </v-toolbar-items>
-      </v-row>
-    </v-container>
+  <v-bottom-navigation app :value="active" color="gray">
+    <v-btn v-for="item in items" :key="item.id" :to="item.path">
+      <v-icon medium>{{ item.icon }}</v-icon>
+      <span>{{ item.name }}</span>
+    </v-btn>
   </v-bottom-navigation>
 </template>
 <script setup>
