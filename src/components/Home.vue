@@ -109,6 +109,7 @@ export default {
     anime({
       targets: '#welcome .lines path',
       strokeDashoffset: [anime.setDashoffset, 0],
+      fill: '#ffffff',
       easing: 'easeInOutSine',
       duration: 1000,
       delay: function(el, i) {
@@ -143,6 +144,8 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.svg-wrapper svg g path {
 }
 .st0 {
   fill: none;
