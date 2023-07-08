@@ -44,13 +44,12 @@
             <span class="title font-weight-light">資格</span>
           </v-card-title>
           <v-card-text>
-            <v-timeline dense>
+            <v-timeline side="end">
               <v-timeline-item v-for="qualification in qualifications" :key="qualification.id">
-                <v-card dark>
+                <v-card color="white">
                   <v-card-title class="title"
-                    >{{ qualification.name }}( 試験日: {{ qualification.date }} )</v-card-title
-                  >
-                  <v-card-text class="white text--primary">
+                    >{{ qualification.name }}( 試験日: {{ qualification.date }} )</v-card-title>
+                  <v-card-text class="black text--primary">
                     <p class="text-left">{{ qualification.impression }}</p>
                     <template v-if="qualification.link">
                       <p class="text-left"><a target="blank" :href="qualification.link">バッジ</a></p>
