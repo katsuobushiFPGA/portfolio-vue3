@@ -1,12 +1,14 @@
 <template>
   <v-app>
-    <default-bar />
-
-    <default-view />
+    <global-header />
+    <v-main>
+      <router-view />
+    </v-main>
+    <global-footer />
   </v-app>
 </template>
 
 <script setup>
-  import DefaultBar from './AppBar.vue'
-  import DefaultView from './View.vue'
+  import GlobalHeader from './Header.vue'
+  import GlobalFooter from './Footer.vue'
 </script>
