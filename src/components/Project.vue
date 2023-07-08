@@ -3,7 +3,7 @@
     <v-subheader>成果物</v-subheader>
     <v-row>
       <v-col v-for="card in cards" :key="card.id" cols="12" sm="4">
-        <v-card class="pa-2 font-tangerine" height="100%">
+        <v-card class="pa-2 font-tangerine" height="100%" theme="light">
           <div class="thumb">
             <a :href="card.link" target="_blank">
               <v-img max-height="150px" position="center" :src="card.thumb"></v-img>
