@@ -22,6 +22,12 @@
 <script>
 export default {
   name: 'Skill',
+  methods: {
+    getProjectImage(name) {
+      const logoPath = `../static/project`
+      return new URL(`${logoPath}/${name}`, import.meta.url).href
+    }
+  },
   data() {
     return {
       cards: [
@@ -29,14 +35,14 @@ export default {
           id: 1,
           title: '技術ブログ',
           description: 'Hugoによる技術ブログ',
-          thumb: require('../static/project/blog.png'),
+          thumb: this.getProjectImage('blog.png'),
           link: 'https://blog.k-bushi.com'
         },
         {
           id: 2,
           title: '電光掲示板',
           description: 'RaspberryPi / Adafruit社のドットマトリクスを使用した電光掲示板の製作記事',
-          thumb: require('../static/project/board.jpeg'),
+          thumb: this.getProjectImage('board.jpeg'),
           link: 'http://www.icrus.org/horiba/article/2014_10_06.php'
         }
       ]
