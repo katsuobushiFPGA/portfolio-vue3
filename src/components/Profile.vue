@@ -45,12 +45,10 @@
           </v-card-title>
           <v-card-text>
             <v-timeline side="end" density="compact" truncate-line="start">
-              <v-timeline-item v-for="qualification in qualifications" :key="qualification.id" width="100%">
+              <v-timeline-item v-for="qualification in qualifications" :key="qualification.id" width="100%" :dot-color="qualification.dotColor">
                 <v-card color="white">
-                  <div style="background-color: black; color:white;">
-                  <v-card-title
+                  <v-card-title class="bg-purple-lighten-1"
                     >{{ qualification.name }}( 試験日: {{ qualification.date }} )</v-card-title>
-                  </div>
                   <v-card-text>
                     <p class="text-left">{{ qualification.impression }}</p>
                     <template v-if="qualification.link">
@@ -93,6 +91,7 @@ export default {
         {
           id: 1,
           name: '基本情報技術者',
+          dotColor: 'teal-lighten-3',
           date: '2014/04/20',
           impression:
             '１回目は大学2年の秋に受験をしたが、ろくに試験対策をせずに受験し午前試験で落ちた。この試験は大学4年の春に受験し、午前午後対策をきっちりとし合格した。'
@@ -100,6 +99,7 @@ export default {
         {
           id: 2,
           name: '応用情報技術者',
+          dotColor: 'teal-lighten-3',
           date: '2015/04/19',
           impression:
             '１回目は大学4年の秋に受験をしたが落ちた、午後試験で３０点近くしか取れておらず記述問題が壊滅的であったからだ。この試験は社会人1年目の春に受験し、まだ研修中であったことから退社後にもきっちりとした勉強時間が午後対策がしっかりでき合格することができた。'
@@ -107,6 +107,7 @@ export default {
         {
           id: 3,
           name: 'AWS Certified Solutions Architect - Associate (SAA)',
+          dotColor: 'pink',
           date: '2020/10/29',
           impression:
             'ここ数年でAWSを触る機会が多くなったため、知識の整理として受験。1ヶ月ほど勉強して合格することができた。',
@@ -115,6 +116,7 @@ export default {
         {
           id: 4,
           name: 'AWS Certified Developer - Associate (DVA)',
+          dotColor: 'pink',
           date: '2021/09/10',
           impression:
             '業務ではAWSでの開発は経験がないが、去年度に取得したSAAの次の資格として取得した。こちらも1ヶ月ほどの勉強で合格をした。',
@@ -123,6 +125,7 @@ export default {
         {
           id: 5,
           name: 'AWS Certified Solutions Architect - Professional (SAP)',
+          dotColor: 'pink',
           date: '2022/07/01',
           impression:
             'AWSの業務を任されることが多くなってきたため、体系的に学習をして業務にてより合ったAWSのサービスを選定できるようになりたいと思ったため受験をした。また、去年度に取得したDVAの次の資格として取得した。2ヶ月ほどの勉強で合格をした。(結構危うかった…)',
@@ -131,6 +134,7 @@ export default {
         {
           id: 6,
           name: 'AWS Certified SysOps Administrator - Associate (SOA)',
+          dotColor: 'pink',
           date: '2022/07/28',
           impression:
             'AWS DOPを取る前に取っておきたいのと、ラボ試験がどういうものかというのを見てみたという興味で受験をした。2週間ほどの勉強で合格した。',
@@ -139,6 +143,7 @@ export default {
         {
           id: 7,
           name: 'AWS Certified DevOps Engineer - Professional (DOP)',
+          dotColor: 'pink',
           date: '2022/12/14',
           impression:
             'DVA/SOAの次の資格としてプロフェッショナル資格の最後の試験として受験をした。1ヶ月ほどの勉強で合格した。',
@@ -147,6 +152,7 @@ export default {
         {
           id: 8,
           name: '3級FP技能検定',
+          dotColor: 'green',
           date: '2023/01/22',
           impression:
             '合格発表日は 2023/03/02. 投資で有利になるかと思ったのと、お金の勉強をしたかったので取ってみた。'
@@ -154,6 +160,7 @@ export default {
         {
           id: 9,
           name: 'ネットワークスペシャリスト',
+          dotColor: 'teal-lighten-3',
           date: '2023/04/16',
           impression:
             '合格発表日は 2023/06/29 4回目で合格、高度試験初合格でやっとという感じ。しっかり試験対策したので合格できた。'
@@ -161,6 +168,7 @@ export default {
         {
           id: 10,
           name: '2級FP技能検定',
+          dotColor: 'green',
           date: '2023/05/28',
           impression:
             '合格発表日は 2023/07/04. FP3級の次なるステップとして勉強をしたかったので取ってみた。'
