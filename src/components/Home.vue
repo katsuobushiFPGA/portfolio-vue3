@@ -133,7 +133,7 @@ export default {
   margin: auto;
 }
 .svg-wrapper {
-  margin-top: 300px;
+  margin-top: 250px;
   position: relative;
   width: 100%;
   padding-top: 100%;
