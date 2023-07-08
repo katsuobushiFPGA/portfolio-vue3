@@ -6,7 +6,7 @@
         <v-card class="pa-2 font-tangerine" height="100%" theme="light">
           <v-card-title class="justify-center">{{ card.group }} </v-card-title>
           <v-card-text>
-            <v-table theme="light">
+            <v-table theme="light" density="comfortable">
               <thead>
               <tr>
                 <th>技術</th>
