@@ -3,26 +3,30 @@
     <v-subheader>技術スキル</v-subheader>
     <v-row>
       <v-col v-for="card in cards" :key="card.id" cols="12" sm="4">
-        <v-card class="pa-2 font-tangerine" height="100%">
+        <v-card class="pa-2 font-tangerine" height="100%" theme="light">
           <v-card-title class="justify-center">{{ card.group }} </v-card-title>
           <v-card-text>
-            <table>
+            <v-table theme="light">
+              <thead>
               <tr>
                 <th>技術</th>
                 <th>習熟度</th>
               </tr>
-              <tr v-for="skill in card.skill" :key="skill.id">
-                <td class="icon">
-                  <v-img max-width="70px" max-height="70px" position="center" :src="skill.logo"></v-img>
-                </td>
-                <td class="star">
-                  <span v-for="n in max_rate" :key="n">
-                    <v-icon color="orange" v-if="n <= skill.rate">mdi-star</v-icon>
-                    <v-icon color="orange" v-else>mdi-star-outline</v-icon>
-                  </span>
-                </td>
-              </tr>
-            </table>
+              </thead>
+              <tbody>
+                <tr v-for="skill in card.skill" :key="skill.id">
+                  <td class="icon">
+                    <v-img max-width="70px" max-height="70px" position="center" :src="skill.logo"></v-img>
+                  </td>
+                  <td class="star">
+                    <span v-for="n in max_rate" :key="n">
+                      <v-icon color="orange" v-if="n <= skill.rate">mdi-star</v-icon>
+                      <v-icon color="orange" v-else>mdi-star-outline</v-icon>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </v-table>
           </v-card-text>
         </v-card>
       </v-col>
