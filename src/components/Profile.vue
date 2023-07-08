@@ -3,7 +3,7 @@
     <v-subheader>プロフィール</v-subheader>
     <v-row>
       <v-col>
-        <v-card class="pa-2">
+        <v-card class="pa-2" theme="light">
           <v-card-title class="fill-height align-end">
             <v-icon large left>
               mdi-account
@@ -36,7 +36,7 @@
           </v-card-text>
         </v-card>
         <br />
-        <v-card class="pa-2">
+        <v-card class="pa-2" theme="light">
           <v-card-title class="fill-height align-end">
             <v-icon large left>
               mdi-account
@@ -44,11 +44,13 @@
             <span class="title font-weight-light">資格</span>
           </v-card-title>
           <v-card-text>
-            <v-timeline side="end">
-              <v-timeline-item v-for="qualification in qualifications" :key="qualification.id">
+            <v-timeline side="end" density="compact" truncate-line="start">
+              <v-timeline-item v-for="qualification in qualifications" :key="qualification.id" width="100%">
                 <v-card color="white">
+                  <div style="background-color: black; color:white;">
                   <v-card-title
                     >{{ qualification.name }}( 試験日: {{ qualification.date }} )</v-card-title>
+                  </div>
                   <v-card-text>
                     <p class="text-left">{{ qualification.impression }}</p>
                     <template v-if="qualification.link">
@@ -61,7 +63,7 @@
           </v-card-text>
         </v-card>
         <br />
-        <v-card class="pa-2">
+        <v-card class="pa-2" theme="light">
           <v-card-title class="fill-height align-end">
             <v-icon large left>
               mdi-account
@@ -69,9 +71,11 @@
             <span class="title font-weight-light">挑戦していること</span>
           </v-card-title>
           <v-card-text>
-            <ul v-for="challenge in challenges" :key="challenge.id">
-              <li>{{ challenge.name }}</li>
-            </ul>
+            <v-list-item density="comfortable">
+              <v-list-item-content v-for="challenge in challenges" :key="challenge.id">
+                <p>{{ challenge.name }}</p>
+              </v-list-item-content>
+            </v-list-item>
           </v-card-text>
         </v-card>
       </v-col>
