@@ -1,10 +1,10 @@
 <template>
-  <v-bottom-navigation :value="active" grow color="teal">
+  <v-app-bar :value="active" color="gray">
     <v-btn v-for="item in items" :key="item.id" :to="item.path">
       <span>{{ item.name }}</span>
       <v-icon medium>{{ item.icon }}</v-icon>
     </v-btn>
-  </v-bottom-navigation>
+  </v-app-bar>
 </template>
 <script setup>
   import { ref, onMounted, computed } from 'vue';
