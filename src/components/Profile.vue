@@ -14,7 +14,7 @@
             <table>
               <tr>
                 <td>ニックネーム</td>
-                <td>かつオブ氏</td>
+                <td>かつおぶし</td>
               </tr>
               <tr>
                 <td>性別</td>
@@ -47,9 +47,9 @@
             <v-timeline side="end">
               <v-timeline-item v-for="qualification in qualifications" :key="qualification.id">
                 <v-card color="white">
-                  <v-card-title class="title"
+                  <v-card-title
                     >{{ qualification.name }}( 試験日: {{ qualification.date }} )</v-card-title>
-                  <v-card-text class="black text--primary">
+                  <v-card-text>
                     <p class="text-left">{{ qualification.impression }}</p>
                     <template v-if="qualification.link">
                       <p class="text-left"><a target="blank" :href="qualification.link">バッジ</a></p>
