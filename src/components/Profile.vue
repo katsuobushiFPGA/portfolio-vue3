@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-subheader>プロフィール</v-subheader>
+    <v-list-subheader>プロフィール</v-list-subheader>
     <v-row>
       <v-col>
         <v-card class="pa-2" theme="light">

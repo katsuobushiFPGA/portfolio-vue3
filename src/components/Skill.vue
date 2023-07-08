@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-subheader>技術スキル</v-subheader>
+    <v-list-subheader>技術スキル</v-list-subheader>
     <v-row>
       <v-col v-for="card in cards" :key="card.id" cols="12" sm="4">
         <v-card class="pa-2 font-tangerine" height="100%" theme="light">

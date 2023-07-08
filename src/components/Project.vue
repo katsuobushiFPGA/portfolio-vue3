@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-subheader>成果物</v-subheader>
+    <v-list-subheader>成果物</v-list-subheader>
     <v-row>
       <v-col v-for="card in cards" :key="card.id" cols="12" sm="4">
         <v-card class="pa-2 font-tangerine" height="100%" theme="light">
