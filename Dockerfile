@@ -13,5 +13,5 @@ RUN chown -R $APP_USER: /usr/src/app /var/www
 USER $APP_USER
 WORKDIR /usr/src/app
 
-EXPOSE 5173
+EXPOSE 3000
 ENTRYPOINT [ "tail", "-f", "/dev/null" ]
