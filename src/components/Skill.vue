@@ -1,0 +1,109 @@
+<template>
+  <v-container>
+    <v-subheader>技術スキル</v-subheader>
+    <v-row>
+      <v-col v-for="card in cards" :key="card.id" cols="12" sm="4">
+        <v-card class="pa-2 font-tangerine" height="100%">
+          <v-card-title class="justify-center">{{ card.group }} </v-card-title>
+          <v-card-text>
+            <table>
+              <tr>
+                <th>技術</th>
+                <th>習熟度</th>
+              </tr>
+              <tr v-for="skill in card.skill" :key="skill.id">
+                <td class="icon">
+                  <v-img max-width="70px" max-height="70px" position="center" :src="skill.logo"></v-img>
+                </td>
+                <td class="star">
+                  <span v-for="n in max_rate" :key="n">
+                    <v-icon color="orange" v-if="n <= skill.rate">mdi-star</v-icon>
+                    <v-icon color="orange" v-else>mdi-star-outline</v-icon>
+                  </span>
+                </td>
+              </tr>
+            </table>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+
+<script>
+export default {
+  name: 'Skill',
+  data() {
+    return {
+      max_rate: 5,
+      cards: [
+        {
+          id: 1,
+          group: 'バックエンド',
+          skill: [
+            { id: 1, logo: import('../static/logo/php.png'), rate: '4' },
+            { id: 2, logo: import('../static/logo/java.png'), rate: '3' },
+            { id: 3, logo: import('../static/logo/mysql.png'), rate: '3' }
+          ]
+        },
+        {
+          id: 2,
+          group: 'フロントエンド',
+          skill: [
+            { id: 1, logo: import('../static/logo/vue.png'), rate: '2' },
+            { id: 2, logo: import('../static/logo/typescript.png'), rate: '1' }
+          ]
+        },
+        {
+          id: 3,
+          group: 'インフラ',
+          skill: [
+            { id: 1, logo: import('../static/logo/aws.png'), rate: '3' },
+            { id: 2, logo: import('../static/logo/gcp.png'), rate: '1' },
+            { id: 3, logo: import('../static/logo/firebase.png'), rate: '1' }
+          ]
+        },
+        {
+          id: 4,
+          group: 'ツール',
+          skill: [
+            { id: 1, logo: import('../static/logo/vscode.png'), rate: '3' },
+            { id: 2, logo: import('../static/logo/eclipse.png'), rate: '4' },
+            { id: 3, logo: import('../static/logo/idea.png'), rate: '1' },
+            { id: 4, logo: import('../static/logo/vim.png'), rate: '2' }
+          ]
+        },
+        {
+          id: 5,
+          group: '外部サービス',
+          skill: [{ id: 1, logo: import('../static/logo/github.png'), rate: '4' }]
+        },
+        {
+          id: 6,
+          group: '趣味',
+          skill: [
+            { id: 1, logo: import('../static/logo/golang.png'), rate: '1' },
+            { id: 2, logo: import('../static/logo/scala.png'), rate: '1' },
+            { id: 3, logo: import('../static/logo/haskell.png'), rate: '1' }
+          ]
+        }
+      ]
+    }
+  }
+}
+</script>
+<style>
+.icon-yellow {
+  color: yellow;
+}
+table {
+  width: 100%;
+}
+td.icon {
+  width: 70px;
+  height: 80px;
+}
+td.star {
+  width: 80%;
+}
+</style>
