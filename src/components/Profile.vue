@@ -47,8 +47,9 @@
             <v-timeline side="end" density="compact" truncate-line="start">
               <v-timeline-item v-for="qualification in qualifications" :key="qualification.id" width="100%" :dot-color="qualification.dotColor">
                 <v-card color="white">
-                  <v-card-title class="bg-blue-grey-darken-4"
-                    >{{ qualification.name }}( 試験日: {{ qualification.date }} )</v-card-title>
+                  <v-card-title class="bg-blue-grey-darken-4 text-h6" style="white-space: normal;overflow-wrap: break-word;">
+                    {{ qualification.name }}( 試験日: {{ qualification.date }} )
+                  </v-card-title>
                   <v-card-text>
                     <p class="text-left">{{ qualification.impression }}</p>
                     <template v-if="qualification.link">
