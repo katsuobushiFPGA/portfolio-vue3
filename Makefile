@@ -4,7 +4,11 @@ up-build:
 	docker compose up -d --build
 app-bash:
 	docker compose exec --user=node app bash
-npm-install:
-	docker compose exec --user=node app npm run install
-npm-run:
-	docker compose exec --user=node app npm run dev
+yarn-install:
+	docker compose exec --user=node app yarn install
+yarn-run:
+	docker compose exec --user=node app yarn dev
+build:
+	make up-build
+	make yarn-install
+	make yarn-run
