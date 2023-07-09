@@ -24,7 +24,9 @@ export default {
   name: 'Skill',
   methods: {
     getProjectImage(name) {
-      const logoPath = `../../public/project`
+      const logoPath = `../../project`
+      console.log(import.meta.url);
+      console.log(new URL(`${logoPath}/${name}`, import.meta.url).href);
       return new URL(`${logoPath}/${name}`, import.meta.url).href
     }
   },

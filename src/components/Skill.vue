@@ -39,7 +39,7 @@ export default {
   name: 'Skill',
   methods: {
     getLogoImage(name) {
-      const logoPath = `../../public/logo`
+      const logoPath = `../../logo`
       return new URL(`${logoPath}/${name}`, import.meta.url).href
     }
   },
