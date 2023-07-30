@@ -4,9 +4,5 @@
   </div>
 </template>
 
-<script>
-// timelineを使用する
-export default {
-  name: 'NotFound'
-}
+<script setup>
 </script>
