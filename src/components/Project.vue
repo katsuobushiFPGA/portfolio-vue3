@@ -19,38 +19,30 @@
   </v-container>
 </template>
 
-<script>
-export default {
-  name: 'Skill',
-  methods: {
-    getProjectImage(name) {
-      const logoPath = `../../project`
-      console.log(import.meta.url);
-      console.log(new URL(`${logoPath}/${name}`, import.meta.url).href);
-      return new URL(`${logoPath}/${name}`, import.meta.url).href
-    }
+<script setup>
+import { ref } from 'vue';
+
+const getProjectImage = ((name)=> {
+  const logoPath = `../../project`
+  return new URL(`${logoPath}/${name}`, import.meta.url).href
+})
+
+const cards = ref([
+  {
+    id: 1,
+    title: '技術ブログ',
+    description: 'Hugoによる技術ブログ',
+    thumb: getProjectImage('blog.png'),
+    link: 'https://blog.k-bushi.com'
   },
-  data() {
-    return {
-      cards: [
-        {
-          id: 1,
-          title: '技術ブログ',
-          description: 'Hugoによる技術ブログ',
-          thumb: this.getProjectImage('blog.png'),
-          link: 'https://blog.k-bushi.com'
-        },
-        {
-          id: 2,
-          title: '電光掲示板',
-          description: 'RaspberryPi / Adafruit社のドットマトリクスを使用した電光掲示板の製作記事',
-          thumb: this.getProjectImage('board.jpeg'),
-          link: 'http://www.icrus.org/horiba/article/2014_10_06.php'
-        }
-      ]
-    }
+  {
+    id: 2,
+    title: '電光掲示板',
+    description: 'RaspberryPi / Adafruit社のドットマトリクスを使用した電光掲示板の製作記事',
+    thumb: getProjectImage('board.jpeg'),
+    link: 'http://www.icrus.org/horiba/article/2014_10_06.php'
   }
-}
+])
 </script>
 <style>
 div.thumb {
