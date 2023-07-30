@@ -83,11 +83,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 
-const qualifications = ref([])
-const challenges = ref([])
-
-qualifications.value.push(
-  {
+const qualifications = ref([{
     id: 1,
     name: '基本情報技術者',
     dotColor: 'blue-grey-darken-4',
@@ -180,13 +176,13 @@ qualifications.value.push(
     impression:
       'CBTで受験。データベーススペシャリストの問題への理解と、企業調査で何かと役立つかと思い基本知識として取った。'
   },
-)
+])
 
-challenges.value.push(
+const challenges = ref([
   { id: 1, name: 'データベーススペシャリストの取得' },
   { id: 2, name: 'OSS開発の貢献' },
   { id: 3, name: '情報処理安全確保支援士の合格' },
-)
+])
 
 const age = computed(()=> {
   let date = new Date()
