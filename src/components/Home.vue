@@ -101,11 +101,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import anime from 'animejs'
-export default {
-  name: 'Home',
-  mounted() {
+import { onMounted } from 'vue';
+onMounted (() => {
     anime({
       targets: '#welcome .lines path',
       strokeDashoffset: [anime.setDashoffset, 0],
@@ -118,9 +117,7 @@ export default {
       direction: 'alternate',
       loop: false
     })
-  },
-  methods: {}
-}
+})
 </script>
 <style scoped>
 .contents {

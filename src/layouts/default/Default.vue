@@ -8,55 +8,38 @@
   </v-app>
 </template>
 
-<script>
-  import GlobalHeader from './Header.vue'
-  import GlobalFooter from './Footer.vue'
+<script setup>
+  import GlobalHeader from '@/layouts/default/Header.vue'
+  import GlobalFooter from '@/layouts/default/Footer.vue'
+  import { ref, computed, watchEffect } from 'vue';
+  import { useRouter } from 'vue-router'
   const SITE_NAME = 'k-bushi.com'
-  export default {
-    name: 'app',
-    data() {
-      return {
-        items: []
-      }
-    },
-    components: {
-      GlobalHeader,
-      GlobalFooter
-    },
-    created() {
-      this.$router.options.routes.forEach((route, index) => {
-        this.items.push({
-          id: index,
-          name: route.name,
-          path: route.path,
-          title: route.title
-        })
-      })
-    },
-    methods: {
-      initPageTitle() {
-        document.title = SITE_NAME
-      },
-      createPageTitle() {
-        if (this.activeTitle) {
-          document.title = this.activeTitle + ' - ' + SITE_NAME
-        } else {
-          document.title = SITE_NAME
-        }
-      }
-    },
-    computed: {
-      activeTitle() {
-        const item = this.items.find(item => {
-          return item.name === this.$route.name
-        })
-        return item.title
-      }
-    },
-    watch: {
-      $route() {
-        this.createPageTitle()
-      }
+
+  const items = ref([])
+  const router = useRouter()
+
+  router.options.routes.forEach((route, index) => {
+    items.value.push({
+      id: index,
+      name: route.name,
+      path: route.path,
+      title: route.title
+    })
+  })
+  const createPageTitle = (() => {
+    if (activeTitle.value) {
+      document.title = activeTitle.value + ' - ' + SITE_NAME
+    } else {
+      document.title = SITE_NAME
     }
-  }
+  })
+  const activeTitle = computed(() => {
+    const item = items.value.find(item => {
+      return item.name === router.currentRoute.value.name
+    })
+    return item?.title
+  })
+  watchEffect(() => {
+    createPageTitle()
+  })
 </script>
