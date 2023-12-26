@@ -176,12 +176,20 @@ const qualifications = ref([{
     impression:
       'CBTで受験。データベーススペシャリストの問題への理解と、企業調査で何かと役立つかと思い基本知識として取った。'
   },
+  {
+    id: 12,
+    name: 'データベーススペシャリスト',
+    dotColor: 'blue-grey-darken-4',
+    date: '2023/10/08',
+    impression:
+      '合格発表日は 2023/12/21 3回目で合格。簿記の内容も出題されたのでやってきたことの成果が出た。'
+  },
 ])
 
 const challenges = ref([
-  { id: 1, name: 'データベーススペシャリストの取得' },
-  { id: 2, name: 'OSS開発の貢献' },
-  { id: 3, name: '情報処理安全確保支援士の合格' },
+  { id: 1, name: '情報処理安全確保支援士の合格' },
+  { id: 2, name: 'システムアーキテクトの合格' },
+  { id: 3, name: 'OSS開発の貢献' },
 ])
 
 const age = computed(()=> {
