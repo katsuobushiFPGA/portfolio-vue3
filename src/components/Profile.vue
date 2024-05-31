@@ -184,6 +184,14 @@ const qualifications = ref([{
     impression:
       '合格発表日は 2023/12/21 3回目で合格。簿記の内容も出題されたのでやってきたことの成果が出た。'
   },
+  {
+    id: 13,
+    name: '統計検定3級',
+    dotColor: 'teal-accent-4',
+    date: '2024/05/31',
+    impression:
+      'CBTで受験。2024/05/31に合格。数学の勉強をしてみたかったので受けた。'
+  },
 ])
 
 const challenges = ref([
