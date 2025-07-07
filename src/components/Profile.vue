@@ -101,7 +101,7 @@ const qualifications = ref([{
   },
   {
     id: 3,
-    name: 'AWS Certified Solutions Architect - Associate (SAA)',
+    name: 'AWS Certified Solutions Architect - Associate (SAA)(失効済み)',
     dotColor: 'pink-darken-4',
     date: '2020/10/29',
     impression:
@@ -119,7 +119,7 @@ const qualifications = ref([{
   },
   {
     id: 5,
-    name: 'AWS Certified Solutions Architect - Professional (SAP)',
+    name: 'AWS Certified Solutions Architect - Professional (SAP)(失効済み)',
     dotColor: 'pink-darken-4',
     date: '2022/07/01',
     impression:
@@ -204,7 +204,7 @@ const qualifications = ref([{
 
 const challenges = ref([
   { id: 1, name: 'システムアーキテクトの取得' },
-  { id: 2, name: 'エンベデッドシステムスペシャリストの取得' },
+  { id: 2, name: 'プロジェクトマネージャーの取得' },
   { id: 3, name: 'OSS開発の貢献' },
 ])
 
