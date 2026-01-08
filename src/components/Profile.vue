@@ -110,7 +110,7 @@ const qualifications = ref([{
   },
   {
     id: 4,
-    name: 'AWS Certified Developer - Associate (DVA)',
+    name: 'AWS Certified Developer - Associate (DVA)(失効済み)',
     dotColor: 'pink-darken-4',
     date: '2021/09/10',
     impression:
@@ -128,7 +128,7 @@ const qualifications = ref([{
   },
   {
     id: 6,
-    name: 'AWS Certified SysOps Administrator - Associate (SOA)',
+    name: 'AWS Certified SysOps Administrator - Associate (SOA)(失効済み)',
     dotColor: 'pink-darken-4',
     date: '2022/07/28',
     impression:
@@ -137,7 +137,7 @@ const qualifications = ref([{
   },
   {
     id: 7,
-    name: 'AWS Certified DevOps Engineer - Professional (DOP)',
+    name: 'AWS Certified DevOps Engineer - Professional (DOP)(失効済み)',
     dotColor: 'pink-darken-4',
     date: '2022/12/14',
     impression:
